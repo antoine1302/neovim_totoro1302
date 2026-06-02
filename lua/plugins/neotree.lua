@@ -23,7 +23,6 @@ return {
                 follow_current_file = {
                     enabled = true,
                 },
-                follow_current_file = "open_default",
             },
             window = {
                 position = "left",
