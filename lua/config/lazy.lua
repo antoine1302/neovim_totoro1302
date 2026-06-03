@@ -21,6 +21,18 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
+  end,
+})
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+  callback = function()
+    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
+  end,
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
