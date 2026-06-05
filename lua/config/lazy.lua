@@ -15,23 +15,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
-  end,
-})
-
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
-  end,
-})
 
 -- Setup lazy.nvim
 require("lazy").setup({
