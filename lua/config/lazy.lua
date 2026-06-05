@@ -15,17 +15,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
-  end,
-})
-
-vim.api.nvim_create_autocmd("VimLeavePre", {
-  callback = function()
-    vim.fn.system("hyprctl dispatch setprop active opaque toggle")
-  end,
-})
 
 -- Setup lazy.nvim
 require("lazy").setup({
