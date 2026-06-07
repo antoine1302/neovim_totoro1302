@@ -27,3 +27,6 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
   end,
 })
 
+vim.keymap.set("n", "<Esc>", function()
+    vim.cmd("nohlsearch")
+end, { silent = true })
