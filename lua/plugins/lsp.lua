@@ -29,7 +29,7 @@ return {
 						analyses = {
 							unusedparams = true,
 						},
-						staticcheck = true,
+						staticcheck = false,
 						gofumpt = false,
 					},
 				},
